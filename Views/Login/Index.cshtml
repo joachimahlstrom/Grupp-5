@@ -1,0 +1,34 @@
+﻿@model Frisk_2._0.Models.LogIn
+
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logga in</title>
+
+
+    <link rel="stylesheet" href="/css/Member.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+
+</head>
+<body>
+
+    <div class="form-container">
+        <!--Här loggar användaren in och användaren dirigeras till första sidan-->
+
+        <form asp-action="LogIn" method="post">
+            <h3>Logga in</h3>
+
+            <input type="email" name="Email" asp-for="Email" placeholder="Ange din email" required />
+            <input type="password" name="Password" asp-for="Password" placeholder="Ange ditt lösenord" required />
+            <input type="submit" name="submit" value="Logga in" class="form-btn">
+            <p>Har du inget konto? <a asp-action="Index" asp-controller="SignUp">Registrera dig här</a></p>
+            
+
+        </form>
+        
+    </div>
+</body>
+</html>

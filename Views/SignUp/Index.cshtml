@@ -1,0 +1,58 @@
+﻿@model Frisk_2._0.Models.SignUp
+    <html lang="se">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bli medlem</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/Member.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <style>
+        span {
+            font-size: small;
+        }
+    </style>
+    </head>
+    <body>
+
+    <div class="form-container">
+
+        <form asp-action="SignUp" method="post">
+
+            @Html.AntiForgeryToken()
+            <h3>Registrera dig</h3>
+            <!--Här registrera sig användaren.-->
+            <div class="form-group">
+                <input asp-for="FirstName" class="form-control" placeholder="Ange ditt förnamn" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="LastName" class="form-control" placeholder="Ange ditt efternamn" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Email" class="form-control" placeholder="Ange din email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Password" input type="password" class="form-control" placeholder="Ange ditt lösenord" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <input type="password" name="cpassword" placeholder="Upprepa ditt lösenord" required />
+
+
+            <input type="submit" name="submit" value="Registrera dig" class="form-btn">
+            <p>Har du redan ett konto? <a asp-action="Index" asp-controller="LogIn">Logga in här</a></p>
+        </form>
+
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+    </body>
+</html>
