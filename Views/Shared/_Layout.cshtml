@@ -24,10 +24,10 @@
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Om oss</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Logga in</a>
+                    <a class="nav-link" asp-area="" asp-controller="LogIn" asp-action="Index">Logga in</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Registrera</a>
+                    <a class="nav-link" asp-area="" asp-controller="SignUp" asp-action="Index">Bli medlem</a>
                 </li>
             </ul>
         </nav>
@@ -56,6 +56,6 @@
 
         </div>
     </footer>
-
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

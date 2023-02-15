@@ -43,7 +43,7 @@
             font-size: 30px;
             text-transform: uppercase;
             margin-bottom: 10px;
-            color: gray;
+            color: black;
         }
 
         .form-container form input,
@@ -79,6 +79,8 @@
 
             .form-container form p a {
                 color: var(--LightGreen);
+                text-decoration: none;
+
             }
 
         .form-container form .error-msg {
