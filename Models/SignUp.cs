@@ -20,9 +20,14 @@ public class SignUp
         [RegularExpression(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Z|a-z]{2,}$", ErrorMessage = "Ange en giltig email-adress")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Ange ditt lösenord")]
+        [DataType(DataType.Password)]
         [RegularExpression(@"^(?=.*[A-Z]).{5,}$", ErrorMessage = "Lösenordet måste vara minst 5 tecken långt och innehålla en stor bokstav")]
         public string Password { get; set; }
 
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "Lösenorden matchar inte.")]
+        public string ConfirmPassword { get; set; }
     }
 }
 

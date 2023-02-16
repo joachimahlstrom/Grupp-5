@@ -43,17 +43,20 @@ namespace Frisk_2._0.Controllers
                             // Returnera en inloggad vy till användaren
                             return RedirectToAction("Index", "LoggedIn");
                         }
+
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Returnera ett felmeddelande om något gick fel
-                    return BadRequest("Ett fel uppstod: " + ex.Message);
-                }
-            }
 
-            // Returnera ett felmeddelande om inloggningen misslyckades
-            return BadRequest("Felaktig e-postadress eller lösenord");
+                    ViewBag.ErrorMessage = "Fel användarnamn eller lösenord";
+                    return View();
+
+                }
+                ViewBag.ErrorMessage = "Fel användarnamn eller lösenord";
+                return View();
+            }
+            
         }
     }
 }

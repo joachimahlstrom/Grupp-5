@@ -8,9 +8,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     
     <link rel="stylesheet" href="./css/site.css" />
-    <link rel="stylesheet" href="./css/member.css" />
+    <link rel="stylesheet" href="./css/Member.css" />
     <style>
         span {
             font-size: small;
@@ -23,9 +24,10 @@
 
         <form asp-action="SignUp" method="post">
 
-            @Html.AntiForgeryToken()
+            
             <h3>Registrera dig</h3>
-            <!--Här registrera sig användaren.-->
+            <!--Här registrera sig användaren, ingen som funkar nu då inlogg är hårdkodat.-->
+
             <div class="form-group">
                 <input asp-for="FirstName" class="form-control" placeholder="Ange ditt förnamn" />
                 <span asp-validation-for="FirstName"></span>
@@ -42,14 +44,21 @@
                 <input asp-for="Password" input type="password" class="form-control" placeholder="Ange ditt lösenord" />
                 <span asp-validation-for="Password"></span>
             </div>
-            <input type="password" name="cpassword" placeholder="Upprepa ditt lösenord" required />
+            <div class="form-group">
+                <input asp-for="ConfirmPassword" input type="password" class="form-control" placeholder="Upprepa ditt lösenord" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+            
 
-
+            
             <input type="submit" name="submit" value="Registrera dig" class="form-btn">
             <p>Har du redan ett konto? <a asp-action="Index" asp-controller="LogIn">Logga in här</a></p>
         </form>
 
     </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
     @section Scripts {
         @{
             await Html.RenderPartialAsync("_ValidationScriptsPartial");

@@ -21,9 +21,6 @@
     justify-content: center;
     padding: 20px;
     padding-bottom: 60px;
-    
-    
-    
 }
     .form-container #asp-validation-for{
         font-size:5px;
@@ -88,4 +85,8 @@
             display: block;
             background: var(--LightGreen);
             color: var(--White);
+        }
+        .form-container form input:focus,
+        .form-container form select:focus {
+            background: #fff;
         }
