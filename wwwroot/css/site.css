@@ -4,9 +4,11 @@
 
 :root {
     --White: #F2F2ED;
-    --LightGreen: #72BD5D;
-    --Font: "Open Sans", sans-serif;
+    --LightGreen: #22AD5C;
     --DarkGreen: #3F5946;
+    --Gray: #B3B6B5;
+    --Yellow: #D6A74B;
+    --Font: "Open Sans", sans-serif;
 }
 
 body {
@@ -105,4 +107,11 @@ p {
 .body-cont {
     height: 900px;
     width: 100%;
+}
+
+.contact-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 3vw;
 }
