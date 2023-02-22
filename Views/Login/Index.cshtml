@@ -8,15 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logga in</title>
 
-
-    
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/member.css" />
-
+    <style>
+        .login-failed {
+            font-size: small;
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
     <div class="form-container">
+        
+
         <form asp-action="LogIn" method="post">
             <h3>Logga in</h3>
 
@@ -33,9 +38,12 @@
             </div>
 
             <div class="form-group">
+                @if (TempData["Message"] != null)
+                {
+                    <div class="login-failed">@TempData["Message"]</div>
+                }
                 <input type="submit" name="submit" value="Logga in" class="form-btn">
             </div>
-
 
             <p>Har du inget konto? <a asp-action="Index" asp-controller="SignUp">Registrera dig här</a></p>
         </form>
