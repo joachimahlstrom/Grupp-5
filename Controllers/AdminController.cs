@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net.Http;
 using System.Text;
 
 namespace Frisk_2._0.Controllers
@@ -61,6 +62,11 @@ namespace Frisk_2._0.Controllers
             HttpClient httpClient = new HttpClient();
             StringContent content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync(url, content);
+            //länk för att skicka det skapade värdet till profilgruppen
+            string absolutePath = response.Headers.Location.AbsolutePath;
+            string idFromDb = absolutePath.Substring(absolutePath.LastIndexOf('/')+1);
+            content = new StringContent(JsonConvert.SerializeObject(idFromDb), Encoding.UTF8, "application/json");
+            response = await httpClient.PostAsync("http://193.10.202.71/Profil/api/UserInfos/Register/" + idFromDb, content);
             return RedirectToAction(nameof(Index));
 
         }
