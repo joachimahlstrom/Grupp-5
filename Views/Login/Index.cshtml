@@ -1,4 +1,5 @@
-﻿@model Frisk_2._0.Models.LogIn
+﻿@*Byt till ert projektnamn.Models.LogIn*@
+@model Frisk_2._0.Models.LogIn
 
 <!DOCTYPE html>
 <html lang="se">
@@ -15,6 +16,10 @@
             font-size: small;
             color: red;
         }
+
+        span {
+            font-size: small;
+        }
     </style>
 </head>
 <body>
@@ -27,14 +32,14 @@
 
             <div class="form-group">
                 <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" required />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <input asp-for="Email" class="form-control" placeholder="Ange din email" required />
+                <span asp-validation-for="Email"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" required />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label asp-for="Lösenord"></label>
+                <input asp-for="Lösenord" class="form-control" placeholder="Ange ditt lösenord" required />
+                <span asp-validation-for="Lösenord"></span>
             </div>
 
             <div class="form-group">
@@ -48,5 +53,13 @@
             <p>Har du inget konto? <a asp-action="Index" asp-controller="SignUp">Registrera dig här</a></p>
         </form>
     </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 </body>
 </html>

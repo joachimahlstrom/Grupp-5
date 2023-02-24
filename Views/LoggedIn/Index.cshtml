@@ -6,7 +6,12 @@
     <title>Logged In</title>
 </head>
 <body>
-    <h1>Welcome to the Logged In page!</h1>
-    <p>Your user ID is: @Model.Id</p>
+    @*Dessa modeller kan ni använda för att visa upp användarens olika värden*@
+    <h1>Välkommen, @Model.FirstName!</h1>
+    <p>Ditt användar-ID är: @Model.Id</p>
+    <p>Ditt förnamn är: @Model.FirstName</p>
+    <p>Ditt efternamn är: @Model.LastName</p>
+    <p>Din e-postadress är: @Model.Email</p>
+    <p>Ditt lösenord är: @Model.Password</p>
 </body>
 </html>

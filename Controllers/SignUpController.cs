@@ -26,7 +26,7 @@ namespace Frisk_2._0.Controllers
         [ValidateAntiForgeryToken]
 
         // [Bind("FirstName,LastName,Email,Password")] betyder att vi bestämmer vilka delar av informationen som fylls i från formuläret som vi vill använda i vår databas
-        public async Task<IActionResult> SignUp(int id, [Bind("FirstName,LastName,Email,Password")] SignUp signUp)
+        public async Task<IActionResult> SignUp(int id, [Bind("FirstName,LastName,Email,Password,ConfirmPassword")] SignUp signUp)
         {
 
             //Skapa en ny instans av vår SignUp-modell med de parametrar som har angivits från formuläret

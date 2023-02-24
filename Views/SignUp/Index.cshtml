@@ -1,4 +1,5 @@
 ﻿@model Frisk_2._0.Models.SignUp
+
     <html lang="se">
     <head>
         <meta charset="UTF-8">
@@ -25,8 +26,7 @@
         <form asp-action="SignUp" method="post">
 
             
-            <h3>Registrera dig</h3>
-            <!--Här registrera sig användaren, ingen som funkar nu då inlogg är hårdkodat.-->
+            <h3>Bli medlem</h3>
 
             <div class="form-group">
                 <input asp-for="FirstName" class="form-control" placeholder="Ange ditt förnamn" />
@@ -51,7 +51,7 @@
             
 
             
-            <input type="submit" name="submit" value="Registrera dig" class="form-btn">
+            <input type="submit" name="submit" value="Bli medlem" class="form-btn">
             <p>Har du redan ett konto? <a asp-action="Index" asp-controller="LogIn">Logga in här</a></p>
         </form>
 

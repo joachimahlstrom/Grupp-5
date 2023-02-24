@@ -1,18 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//Byt till ert projektnamn.Models
 using Frisk_2._0.Models;
+using Microsoft.AspNetCore.Mvc;
 
+//Byt till ert projektnamn.Controllers
 namespace Frisk_2._0.Controllers
 {
     public class LoggedInController : Controller
     {
-        public IActionResult Index(int userId)
+        //Använd er controller där ni vill att användarinfon ska visas upp
+        public IActionResult Index(UserData userData)
         {
-            // Hämta användar-id från sessionen
-           
+            // Kontrollera att användardata har skickats med och att det finns ett giltigt användar-id
+            if (userData != null && userData.Id > 0)
+            {
+                // Returnera vyn med användaruppgifterna
+                return View(userData);
+            }
 
-            // Skicka användarens ID till vyn
-            var userData = new UserData { Id = userId };
-            return View(userData);
+            // Om det inte finns giltig användarinformation, skicka användaren tillbaka till Login-sidan med ett felmeddelande
+            TempData["Message"] = "Försök logga in igen";
+            return RedirectToAction("Index", "Login");
         }
     }
 }
