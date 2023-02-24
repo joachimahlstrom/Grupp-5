@@ -14,12 +14,17 @@
     width:100px;
     margin:50px;
 }
-
+.input-cont{
+    display:flex;
+    flex-grow:2;
+    justify-content:flex-end;
+    margin-right:100px;
+}
 .input-style {
     width:250px;
     height:30px;
-    margin-left: 40vw;
-    margin-bottom: 200px;
+    
+   
     border-radius: 5px;
     border: 1px solid #eee;
     transition: .3s border-color;
