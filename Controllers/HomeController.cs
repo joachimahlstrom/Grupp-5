@@ -26,8 +26,9 @@ namespace Frisk_2._0.Controllers
                     return View(userData);
                 }
             }
-            return RedirectToAction("Index", "Login");
+            return View();
         }
+       
 
         public IActionResult Privacy()
         {
