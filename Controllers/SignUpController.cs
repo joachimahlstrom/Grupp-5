@@ -40,7 +40,14 @@ namespace Frisk_2._0.Controllers
 
             //Skicka en POST-request till vårt API med vår JSON i request-bodyn
             var response = await _httpClient.PostAsync("http://193.10.202.75/FriskAPI/Users", content);
-            response.EnsureSuccessStatusCode();
+
+
+            //länk för att skicka det skapade värdet till profilgruppen
+            string absolutePath = response.Headers.Location.AbsolutePath;
+            string idFromDb = absolutePath.Substring(absolutePath.LastIndexOf('/') + 1);
+            content = new StringContent(JsonConvert.SerializeObject(idFromDb), Encoding.UTF8, "application/json");
+            response = await _httpClient.PostAsync("http://193.10.202.71/Profil/api/UserInfos/Register/" + idFromDb, content);
+            //response.EnsureSuccessStatusCode();
 
             //Redirect till Index-vyn i Home-controllern
             return RedirectToAction("Index", "SignUp");

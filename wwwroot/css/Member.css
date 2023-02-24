@@ -9,7 +9,7 @@
 }
 :root {
     --White: #F2F2ED;
-    --LightGreen: #72BD5D;
+    --LightGreen: #22AD5C;
     --Font: "Open Sans", sans-serif;
 }
 
@@ -90,4 +90,3 @@
         .form-container form select:focus {
             background: #fff;
         }
-

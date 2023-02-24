@@ -4,9 +4,11 @@
 
 :root {
     --White: #F2F2ED;
-    --LightGreen: #72BD5D;
-    --Font: "Open Sans", sans-serif;
+    --LightGreen: #22AD5C;
     --DarkGreen: #3F5946;
+    --Gray: #B3B6B5;
+    --Yellow: #D6A74B;
+    --Font: "Open Sans", sans-serif;
 }
 
 body {
@@ -18,6 +20,10 @@ body {
     font-weight: 800;
 }
 
+h4 {
+    margin: 26.6px;
+    margin-left: 0px;
+}
 .navbar {
     background-color: var(--LightGreen);
     height: 75px;
@@ -29,6 +35,7 @@ body {
     letter-spacing: 1vw;
     margin-left: 7vw;
     line-height: 4.5rem;
+    text-decoration: underline
 }
 
 .nav-list {
@@ -100,4 +107,11 @@ p {
 .body-cont {
     height: 900px;
     width: 100%;
+}
+
+.contact-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 3vw;
 }
