@@ -6,33 +6,48 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 700px;
+    height: 1000px;
     background-color: var(--LightGreen);
 }
 .button-style {
     height: 50px;
     width: 150px;
-    margin: 50px;
+    margin: 30px;
     color: var(--White);
     background-color: var(--LightGreen);
     border-radius: 5px;
     border: solid black 0.5px;
+    font-weight: 600;
+    font-size: 15pt;
+    font-family: var(--Font);
 }
 .input-cont{
     display:flex;
-    flex-grow:2;
-    justify-content:flex-end;
-    margin-right:100px;
+    justify-content: center;
+    height: 40px;
+    width: 300px;
+    /*flex-grow:2;
+    justify-content:flex-end;*/
+    /*margin-right:100px;*/
 }
-.input-style {
-    width:250px;
-    height:30px;
+
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;  
     
-   
+}
+
+.input-style {
+    width: 360px;
+    height: 50px;
     border-radius: 5px;
     border: 1px solid #eee;
     transition: .3s border-color;
-    outline:none;
+    outline: none;
 }
 
 .input-style:hover {
