@@ -26,7 +26,7 @@ namespace Frisk_2._0.Controllers
         [ValidateAntiForgeryToken]
 
         // [Bind("FirstName,LastName,Email,Password")] betyder att vi bestämmer vilka delar av informationen som fylls i från formuläret som vi vill använda i vår databas
-        public async Task<IActionResult> SignUp(int id, [Bind("FirstName,LastName,Email,Password,ConfirmPassword")] SignUp signUp)
+        public async Task<IActionResult> SignUp([Bind("FirstName,LastName,Email,Password,ConfirmPassword")] SignUp signUp)
         {
 
             //Skapa en ny instans av vår SignUp-modell med de parametrar som har angivits från formuläret
@@ -43,9 +43,16 @@ namespace Frisk_2._0.Controllers
 
 
             //länk för att skicka det skapade värdet till profilgruppen
+            // skapar en variabel för att hämta värdet av id i url-strängen
             string absolutePath = response.Headers.Location.AbsolutePath;
+
+            //definerar att det är en substring och väljer vilken del av hela strängen som skall tas, placerar i en ny variabel
             string idFromDb = absolutePath.Substring(absolutePath.LastIndexOf('/') + 1);
+
+            // Skapar en instans av en stringContent med hjälp av Json och specifierar jsontypen
             content = new StringContent(JsonConvert.SerializeObject(idFromDb), Encoding.UTF8, "application/json");
+
+            //Skickar en Post-request till API för profilgruppen endast av id-värdet 
             response = await _httpClient.PostAsync("http://193.10.202.71/Profil/api/UserInfos/Register/" + idFromDb, content);
             //response.EnsureSuccessStatusCode();
 
