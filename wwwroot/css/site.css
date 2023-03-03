@@ -19,7 +19,14 @@ body {
     font-variant: normal;
     font-weight: 800;
 }
-
+header{
+  
+    
+    position: sticky;
+    top: 0;
+    width: 100%;
+    align-self: flex-start
+}
 h4 {
     margin: 26.6px;
     margin-left: 0px;
@@ -27,9 +34,8 @@ h4 {
 .navbar {
     background-color: var(--LightGreen);
     height: 75px;
-    position: fixed;
-    top: 0;
     width: 100%;
+    align-self: flex-start
 }
 
 .navbar-brand {
