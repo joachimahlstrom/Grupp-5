@@ -8,12 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.2.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\Pictures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Admin.css" />
   </ItemGroup>
 
 </Project>

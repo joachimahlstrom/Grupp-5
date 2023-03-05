@@ -9,12 +9,14 @@
       "Frisk 2.0/1.0.0": {
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.12",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "bootstrap": "5.2.3"
         },
         "runtime": {
           "Frisk 2.0.dll": {}
         }
       },
+      "bootstrap/5.2.3": {},
       "Humanizer.Core/2.2.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -2021,6 +2023,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tZZrH4HdqBr/oeUlGoc2KliYlwXeN3qyhKgc1B5dc585+lnMkcD4A5yIX2NmNoXCCagQQiQGKn7A97sWoo2AOw==",
+      "path": "bootstrap/5.2.3",
+      "hashPath": "bootstrap.5.2.3.nupkg.sha512"
     },
     "Humanizer.Core/2.2.0": {
       "type": "package",

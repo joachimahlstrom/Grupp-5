@@ -2,15 +2,14 @@
 
 @{
     ViewData["Title"] = "Index";
+    
 }
 
-<h1>Index</h1>
+<link rel="stylesheet" href="./css/Admin.css" />
+<h1>Alla användare</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
-    <thead>
+    <thead class="thead">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Id)
@@ -27,13 +26,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
-            <th></th>
+            <th id="create-button"><a asp-action="Create">Skapa ny användare</a></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td class="table-data">
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
@@ -49,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id= item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                @Html.ActionLink("Edit", "Ändra", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Detaljer", new { id= item.Id }) |
+                @Html.ActionLink("Delete", "Radera", new { id=item.Id })
             </td>
         </tr>
 }
