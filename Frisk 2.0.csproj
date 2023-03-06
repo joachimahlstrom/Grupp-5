@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Pictures\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\css\Admin.css" />
   </ItemGroup>
 
