@@ -11,20 +11,14 @@
     --Font: "Open Sans", sans-serif;
 }
 
-/*body {
-    margin: 0px;
-    font-family: var(--Font);
-    font-size: 20px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 800;
-}*/
+
 header {
     position: sticky;
     top: 0;
     width: 100%;
-    align-self: flex-start margin: 0px;
-    font-family: var(--Font);
+    align-self: flex-start;
+    margin: 0px;
+    /*font-family: var(--Font);*/
     font-size: 20px;
     font-style: normal;
     font-variant: normal;
@@ -85,14 +79,17 @@ footer h4 {
     line-height: 4.5rem;
 }
 
-    .nav-link:hover {
-        background-color: var(--White);
-        color: var(--LightGreen);
-        padding: 7px 15px;
-        border-radius: 5px;
-    }
+.nav-link:hover {
+    background-color: var(--White);
+    color: var(--LightGreen);
+    padding: 7px 15px;
+    border-radius: 5px;
+}
 
-
+.heroHeading {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
 
 .footer {
     background-color: var(--DarkGreen);
@@ -100,9 +97,9 @@ footer h4 {
     justify-content: center;
 
     margin: 0px;
+    font-style: normal;
     font-family: var(--Font);
     font-size: 20px;
-    font-style: normal;
     font-variant: normal;
     font-weight: 800;
 }
@@ -125,7 +122,7 @@ footer h4 {
     color: var(--White);
 }
 
-p {
+footer p {
     font-size: 12px;
 }
 
