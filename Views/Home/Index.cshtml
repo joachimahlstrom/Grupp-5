@@ -22,14 +22,15 @@
     
         <div class="input-cont">
         <div class="search-cont">
-        <form>
-            <input class="input-style" type="text" placeholder="Sök event här..." />
+        <form method="get" asp-action="search">
+            <input name="text" class="input-style" type="text" placeholder="Sök event här..." />
+            <button type="submit" class="button-style">Sök</button>
         </form>
         </div>
     </div>
      <div>       
        
-       <button class="button-style">Sök</button>
+       
        
     </div>
     </div>

@@ -27,7 +27,14 @@
     font-weight: 600;
     font-size: 15pt;
     font-family: var(--Font);
+    margin-left: 100px;
+    cursor: pointer;
 }
+
+    .button-style:hover {
+        background-color: var(--DarkGreen);
+    }
+
 .input-cont{
     display:flex;
     justify-content: center;

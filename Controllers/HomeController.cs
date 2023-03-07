@@ -10,6 +10,15 @@ namespace Frisk_2._0.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        public IActionResult Search(string text)
+        {
+            string searchUrl = "https://informatik3.ei.hv.se/frisk?Text=";
+
+            return Redirect(searchUrl + text);
+
+        }
+
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

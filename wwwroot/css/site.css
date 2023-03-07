@@ -13,21 +13,14 @@
 
 body {
     margin: 0px;
-    font-family: var(--Font);
-    font-size: 20px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 800;
 }
-header{
-  
-    
+
+
+header {
     position: sticky;
-    top: 0;
-    width: 100%;
-    align-self: flex-start
+    top: 0;    
 }
-h4 {
+footer h4 {
     margin: 26.6px;
     margin-left: 0px;
 }
@@ -35,7 +28,13 @@ h4 {
     background-color: var(--LightGreen);
     height: 75px;
     width: 100%;
-    align-self: flex-start
+    align-self: flex-start;
+    margin: 0px;
+    font-family: var(--Font);
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
 }
 
 .navbar-brand {
@@ -56,14 +55,6 @@ h4 {
     gap: 2vw;
 }
 
-/*.nav-item:nth-of-type(1) {
-    flex-grow: 1;
-}
-
-.nav-item:nth-of-type(4) {
-    flex-grow: 0.8;
-}*/
-
 .nav-item:nth-of-type(6) {
     flex-grow: 0.3;
 }
@@ -75,19 +66,28 @@ h4 {
     line-height: 4.5rem;
 }
 
-    .nav-link:hover {
-        background-color: var(--White);
-        color: var(--LightGreen);
-        padding: 7px 15px;
-        border-radius: 5px;
-    }
+.nav-link:hover {
+    background-color: var(--White);
+    color: var(--LightGreen);
+    padding: 7px 15px;
+    border-radius: 5px;
+}
 
-
+.heroHeading {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
 
 .footer {
     background-color: var(--DarkGreen);
     height: 200px;
     justify-content: center;
+    margin: 0px;
+    font-style: normal;
+    font-family: var(--Font);
+    font-size: 20px;
+    font-variant: normal;
+    font-weight: 800;
 }
 
 
@@ -103,12 +103,12 @@ h4 {
     height: 100%;
 }
 
-.column {
+.footer .column {
     width: 25%;
     color: var(--White);
 }
 
-p {
+footer p {
     font-size: 12px;
 }
 
