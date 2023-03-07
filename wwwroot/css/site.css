@@ -11,23 +11,26 @@
     --Font: "Open Sans", sans-serif;
 }
 
-body {
+/*body {
     margin: 0px;
     font-family: var(--Font);
     font-size: 20px;
     font-style: normal;
     font-variant: normal;
     font-weight: 800;
-}
-header{
-  
-    
+}*/
+header {
     position: sticky;
     top: 0;
     width: 100%;
-    align-self: flex-start
+    align-self: flex-start margin: 0px;
+    font-family: var(--Font);
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
 }
-h4 {
+footer h4 {
     margin: 26.6px;
     margin-left: 0px;
 }
@@ -35,7 +38,14 @@ h4 {
     background-color: var(--LightGreen);
     height: 75px;
     width: 100%;
-    align-self: flex-start
+    align-self: flex-start;
+    
+    margin: 0px;
+    font-family: var(--Font);
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
 }
 
 .navbar-brand {
@@ -88,6 +98,13 @@ h4 {
     background-color: var(--DarkGreen);
     height: 200px;
     justify-content: center;
+
+    margin: 0px;
+    font-family: var(--Font);
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 800;
 }
 
 
