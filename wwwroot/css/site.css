@@ -11,6 +11,10 @@
     --Font: "Open Sans", sans-serif;
 }
 
+body {
+    margin: 0px;
+}
+
 
 header {
     position: sticky;
