@@ -6,14 +6,11 @@
 }
 
 <link rel="stylesheet" href="./css/Admin.css" />
-<h1>Alla användare</h1>
-
-<table class="table">
-    <thead class="thead">
+<div class="tableContainer">
+<table id="table">
+    <thead id="table-head">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
+            <th>ID</th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -26,13 +23,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
-            <th id="create-button"><a asp-action="Create">Skapa ny användare</a></th>
+            <th>
+                <button id="btn-create" onclick="window.location='@Url.Action("Create", "Admin")'"><i class="fa fa-plus"> &nbsp;Skapa ny</i></button>
+            </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="table-body">
 @foreach (var item in Model) {
         <tr>
-            <td class="table-data">
+            <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
@@ -48,11 +47,12 @@
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Ändra", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Detaljer", new { id= item.Id }) |
-                @Html.ActionLink("Delete", "Radera", new { id=item.Id })
-            </td>
+                    <button id="btn-details" title="Detaljer" onclick="window.location='@Url.Action("Details", "Admin", new { id= item.Id })'"><i class="fa fa-info"></i></button>
+                    <button id="btn-edit" title="Ändra" onclick="window.location='@Url.Action("Edit", "Admin", new { id= item.Id })'"><i class="fa fa-edit"></i></button>
+                    <button id="btn-delete" title="Radera" onclick="window.location='@Url.Action("Delete", "Admin", new { id= item.Id })'"><i class="fa fa-trash"></i></button>
+                </td>
         </tr>
 }
     </tbody>
 </table>
+</div>
