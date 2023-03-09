@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.12",
           "Newtonsoft.Json": "13.0.2",
-          "bootstrap": "5.2.3"
+          "bootstrap": "5.2.3",
+          "jQuery.UI.Combined": "1.13.2"
         },
         "runtime": {
           "Frisk 2.0.dll": {}
@@ -26,6 +27,12 @@
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.0"
           }
+        }
+      },
+      "jQuery/2.0.0": {},
+      "jQuery.UI.Combined/1.13.2": {
+        "dependencies": {
+          "jQuery": "2.0.0"
         }
       },
       "MessagePack/2.1.152": {
@@ -2037,6 +2044,20 @@
       "sha512": "sha512-rsYXB7+iUPP8AHgQ8JP2UZI2xK2KhjcdGr9E6zX3CsZaTLCaw8M35vaAJRo1rfxeaZEVMuXeaquLVCkZ7JcZ5Q==",
       "path": "humanizer.core/2.2.0",
       "hashPath": "humanizer.core.2.2.0.nupkg.sha512"
+    },
+    "jQuery/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u3YiE0QnFnBExPkBPqWr2EVd8nh01iQlMWPRfa7b1fQ53YuMtHw+Y9oaJukHtEHaMpyL0PJzq69y3/5AxWogGA==",
+      "path": "jquery/2.0.0",
+      "hashPath": "jquery.2.0.0.nupkg.sha512"
+    },
+    "jQuery.UI.Combined/1.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I6Fxd7HFMilY9/4S0fhVAoToE4FtB2uALft2PaKBplitOVXrth0MhqUlG+25VDNj4q/SrUdhudkZmVnaq8qWvA==",
+      "path": "jquery.ui.combined/1.13.2",
+      "hashPath": "jquery.ui.combined.1.13.2.nupkg.sha512"
     },
     "MessagePack/2.1.152": {
       "type": "package",

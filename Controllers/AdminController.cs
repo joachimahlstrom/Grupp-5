@@ -136,4 +136,5 @@ namespace Frisk_2._0.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
+    
 }
