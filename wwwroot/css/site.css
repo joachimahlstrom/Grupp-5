@@ -36,7 +36,10 @@ footer h4 {
     font-variant: normal;
     font-weight: 800;
 }
-
+.navbar-logo img {
+    height: 70px;
+    width: auto;
+}
 .navbar-brand {
     color: var(--White);
     font-size: 30px;
