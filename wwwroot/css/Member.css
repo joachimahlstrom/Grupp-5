@@ -90,3 +90,16 @@
         .form-container form select:focus {
             background: #fff;
         }
+        form-container form input,
+        .form-container form select {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 17px;
+            margin: 8px 0;
+            background: #eee;
+            border-radius: 5px;
+        }
+
+            .form-container form select option {
+                background: #fff;
+            }

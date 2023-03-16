@@ -19,6 +19,8 @@ public class SignUp
 
         [RegularExpression(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Z|a-z]{2,}$", ErrorMessage = "Ange en giltig email-adress")]
         public string Email { get; set; }
+        
+        public string UserType { get; set; }
 
         [Required(ErrorMessage = "Ange ditt lösenord")]
         [DataType(DataType.Password)]
