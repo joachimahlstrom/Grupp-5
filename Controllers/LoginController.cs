@@ -6,6 +6,8 @@ using Frisk_2._0.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Frisk_2._0.Controllers
 {
@@ -29,6 +31,14 @@ namespace Frisk_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LogIn logIn)
         {
+            // Hascha lösenordet med SHA256
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(logIn.Lösenord));
+                var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+                logIn.Lösenord = hash;
+            }
+
             // Skapa en GET-begäran med användardata
             var response = await _httpClient.GetAsync($"Users?email={logIn.Email}&password={logIn.Lösenord}");
 

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Frisk_2._0.Models;
+using System.Security.Cryptography;
 
 namespace Frisk_2._0.Controllers
 {
@@ -25,12 +26,20 @@ namespace Frisk_2._0.Controllers
         // [ValidateAntiForgeryToken] används för att skydda mot CSRF-attack (Cross-Site Request Forgery)
         [ValidateAntiForgeryToken]
 
-        // [Bind("FirstName,LastName,Email,Password")] betyder att vi bestämmer vilka delar av informationen som fylls i från formuläret som vi vill använda i vår databas
-        public async Task<IActionResult> SignUp([Bind("FirstName,LastName,Email,Password,ConfirmPassword, UserType")] SignUp signUp)
+        // [Bind("FirstName,LastName,Email,Password,UserType")] betyder att vi bestämmer vilka delar av informationen som fylls i från formuläret som vi vill använda i vår databas
+        public async Task<IActionResult> SignUp([Bind("FirstName,LastName,Email,Password,ConfirmPassword,UserType")] SignUp signUp)
         {
 
             //Skapa en ny instans av vår SignUp-modell med de parametrar som har angivits från formuläret
             var user = signUp;
+
+            //Hascha lösenordet med SHA256
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(user.Password));
+                var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+                user.Password = hash;
+            }
 
             //Serialisera vår modell till JSON
             var json = JsonConvert.SerializeObject(user);
@@ -43,21 +52,16 @@ namespace Frisk_2._0.Controllers
 
 
             //länk för att skicka det skapade värdet till profilgruppen
-            // skapar en variabel för att hämta värdet av id i url-strängen
             string absolutePath = response.Headers.Location.AbsolutePath;
-
-            //definerar att det är en substring och väljer vilken del av hela strängen som skall tas, placerar i en ny variabel
             string idFromDb = absolutePath.Substring(absolutePath.LastIndexOf('/') + 1);
-
-            // Skapar en instans av en stringContent med hjälp av Json och specifierar jsontypen
             content = new StringContent(JsonConvert.SerializeObject(idFromDb), Encoding.UTF8, "application/json");
-
-            //Skickar en Post-request till API för profilgruppen endast av id-värdet 
             response = await _httpClient.PostAsync("http://193.10.202.71/Profil/api/UserInfos/Register/" + idFromDb, content);
             //response.EnsureSuccessStatusCode();
 
             //Redirect till Index-vyn i Home-controllern
             return RedirectToAction("Index", "SignUp");
         }
+        // Hasha lösenord med SHA256-algoritmen
+        
     }
 }

@@ -15,7 +15,7 @@ public class SignUp
         public string FirstName { get; set; }
 
         [RegularExpression(@"^[A-Öa-ö\s]+$", ErrorMessage = "Efternamnet får bara innehålla bokstäver")]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         [RegularExpression(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Z|a-z]{2,}$", ErrorMessage = "Ange en giltig email-adress")]
         public string Email { get; set; }
