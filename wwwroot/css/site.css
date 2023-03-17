@@ -114,6 +114,11 @@ footer h4 {
 footer p {
     font-size: 12px;
 }
+footer a {
+    color: var(--White);
+    text-decoration: none;
+    font-size: 12px;
+}
 
 
 .body-cont {
