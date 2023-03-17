@@ -74,8 +74,16 @@ namespace Frisk_2._0.Controllers
                     // Skapa en autentiseringscookie
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
 
-                    // Skicka användarens uppgifter till LoggedIn-vyn
-                    return RedirectToAction("Index", "LoggedIn", userData);
+                    // Skicka användarens uppgifter till LoggedIn-vyn samt kolla om användaren är admin
+                    if (userData.UserType == "admin")
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "LoggedIn", userData);
+                    }
+                    
                 }
             }
 
