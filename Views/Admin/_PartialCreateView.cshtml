@@ -1,0 +1,50 @@
+﻿@model Frisk_2._0.Models.User
+<div class="modal fade" id="createUser" aria-labelledby="createUserLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="createUserLabel">Skapa ny användare</h3>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Create" method="post">
+                   
+                    <select name="UserType">
+
+                        <option value="user">Privatperson</option>
+                        <option value="sponsor">Sponsor</option>
+                        <option value="sponsor">Admin</option>
+                    </select>
+                    <div asp-validation-summary="ModelOnly" class="text-danger" placeholder="Ange förnamn"></div>
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label" placeholder="Ange efternamn"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label" placeholder="Ange email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label" placeholder="Ange lösenord"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-back" type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                        <button id="btn-save" type="submit" class="btn btn-primary">Spara</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

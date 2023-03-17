@@ -51,13 +51,13 @@ namespace Frisk_2._0.Controllers
         // GET: AdminController/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_PartialCreateView");
         }
 
         // POST: AdminController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind("Id, FirstName, LastName, Email, Password")] User user)
+        public async Task<ActionResult> Create([Bind("Id, FirstName, LastName, Email, Password, UserType")] User user)
         {
             string url = @"http://193.10.202.75/FriskAPI/Users";
             HttpClient httpClient = new HttpClient();

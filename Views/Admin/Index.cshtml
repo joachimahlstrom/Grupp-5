@@ -20,10 +20,10 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Password)
+                    @Html.DisplayNameFor(model => model.UserType)
             </th>
             <th>
-                <button id="btn-create" onclick="window.location='@Url.Action("Create", "Admin")'"><i class="fa fa-plus"> &nbsp;Skapa ny</i></button>
+                <button id="btn-create" type="button" class="btn btn-info" data-toggle="modal" data-target="#createUser"><i class="fa fa-plus"> &nbsp;Skapa ny</i></button>
             </th>
         </tr>
     </thead>
@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Password)
+                @Html.DisplayFor(modelItem => item.UserType)
             </td>
             <td>
                     <button id="btn-details" title="Detaljer" onclick="window.location='@Url.Action("Details", "Admin", new { id= item.Id })'"><i class="fa fa-info"></i></button>
@@ -55,3 +55,5 @@
     </tbody>
 </table>
 </div>
+
+@await Html.PartialAsync("_PartialCreateView", new User())

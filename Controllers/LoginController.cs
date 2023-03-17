@@ -51,7 +51,8 @@ namespace Frisk_2._0.Controllers
                         FirstName = user.FirstName,
                         LastName = user.LastName,
                         Email = user.Email,
-                        Password = user.Password
+                        Password = user.Password,
+                        UserType = user.UserType
                     };
 
                     // Spara användaruppgifterna i en session

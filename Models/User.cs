@@ -15,5 +15,9 @@ namespace Frisk_2._0.Models
         public string Email { get; set; }
         [DisplayName("Lösenord")]
         public string Password { get; set; }
+
+        [DisplayName("Användartyp")]
+        public string UserType { get; set; }
+
     }
 }
