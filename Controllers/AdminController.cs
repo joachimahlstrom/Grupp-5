@@ -95,7 +95,7 @@ namespace Frisk_2._0.Controllers
                     user = JsonConvert.DeserializeObject<User>(respons);
                 }
             }
-            return View(user);
+            return PartialView("_PartialEditView",user);
         }
 
         // POST: AdminController/Edit/5
