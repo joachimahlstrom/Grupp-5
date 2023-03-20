@@ -19,7 +19,7 @@ namespace Frisk_2._0.Controllers
         public async Task<ActionResult> Index()
         {
             // deklarerar en ny lista 
-            List<User> userList = new List<User>();
+            List<SignUp> userList = new List<SignUp>();
 
             // hämtar data från API:et
             using (var response = await _httpClient.GetAsync("http://193.10.202.75/FriskAPI/Users"))
@@ -28,7 +28,7 @@ namespace Frisk_2._0.Controllers
                 string responseContent = await response.Content.ReadAsStringAsync();
 
                 // konverterar listan med hjälp av json
-                userList = JsonConvert.DeserializeObject<List<User>>(responseContent);
+                userList = JsonConvert.DeserializeObject<List<SignUp>>(responseContent);
             }
 
             // returnerar listan
@@ -40,11 +40,11 @@ namespace Frisk_2._0.Controllers
         public async Task<ActionResult> Details(int id)
         {
             // deklarerar en nytt objekt
-            User user = new User();
+            SignUp user = new SignUp();
             var response = await _httpClient.GetAsync("http://193.10.202.75/FriskAPI/Users/" + id);
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            user = JsonConvert.DeserializeObject<User>(responseContent);
+            user = JsonConvert.DeserializeObject<SignUp>(responseContent);
 
             return View(user);
         }
@@ -58,14 +58,16 @@ namespace Frisk_2._0.Controllers
         // POST: AdminController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind("Id, FirstName, LastName, Email, Password, UserType")] User user)
+        public async Task<ActionResult> Create([Bind("Id, FirstName, LastName, Email, Password, UserType")] SignUp user)
         {
+            // hashning av lösenord
             using (SHA256 sha256 = SHA256.Create())
             {
                 var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(user.Password));
                 var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
                 user.Password = hash;
             }
+            // anrop av sträng 
 
             string url = @"http://193.10.202.75/FriskAPI/Users";
             HttpClient httpClient = new HttpClient();
@@ -94,13 +96,13 @@ namespace Frisk_2._0.Controllers
         public async Task<ActionResult> Edit(int id)
         {
 
-            User user = new User();
+            SignUp user = new SignUp();
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync("http://193.10.202.75/FriskAPI/Users/" + id))
                 {
                     string respons = await response.Content.ReadAsStringAsync();
-                    user = JsonConvert.DeserializeObject<User>(respons);
+                    user = JsonConvert.DeserializeObject<SignUp>(respons);
                 }
             }
             return PartialView("_PartialEditView",user);
@@ -109,7 +111,7 @@ namespace Frisk_2._0.Controllers
         // POST: AdminController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(User user)
+        public async Task<ActionResult> Edit(SignUp user)
         {
             string url = @"http://193.10.202.75/FriskAPI/Users/" + user.Id;
             HttpClient httpClient = new HttpClient();
@@ -121,13 +123,13 @@ namespace Frisk_2._0.Controllers
         // GET: AdminController/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            User user = new User();
+            SignUp user = new SignUp();
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync("http://193.10.202.75/FriskAPI/Users/" + id))
                 {
                     string respons = await response.Content.ReadAsStringAsync();
-                    user = JsonConvert.DeserializeObject<User>(respons);
+                    user = JsonConvert.DeserializeObject<SignUp>(respons);
                 }
             }
             return View(user);
@@ -136,7 +138,7 @@ namespace Frisk_2._0.Controllers
         // POST: AdminController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete(int id, User user)
+        public async Task<ActionResult> Delete(int id, SignUp user)
         {
             string url = @"http://193.10.202.75/FriskAPI/Users/" + id;
             HttpClient httpClient = new HttpClient();
