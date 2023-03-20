@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
 using System.Web;
+using System.Security.Cryptography;
 
 namespace Frisk_2._0.Controllers
 {
@@ -59,6 +60,13 @@ namespace Frisk_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind("Id, FirstName, LastName, Email, Password, UserType")] User user)
         {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(user.Password));
+                var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+                user.Password = hash;
+            }
+
             string url = @"http://193.10.202.75/FriskAPI/Users";
             HttpClient httpClient = new HttpClient();
             StringContent content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
