@@ -11,16 +11,16 @@
         <tr>
             <th>ID</th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                Förnamn
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                Efternamn
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Email
             </th>
             <th>
-                    @Html.DisplayNameFor(model => model.UserType)
+                Användartyp
             </th>
             <th>
                 <button id="btn-create" type="button" class="btn btn-info" data-toggle="modal" data-target="#createUser"><i class="fa fa-plus"> &nbsp;Skapa ny</i></button>
@@ -46,8 +46,9 @@
                 @Html.DisplayFor(modelItem => item.UserType)
             </td>
             <td>
-                    <button id="btn-details" title="Detaljer" onclick="window.location='@Url.Action("Details", "Admin", new { id= item.Id })'"><i class="fa fa-info"></i></button>
-                        <button id="btn-edit" title="Ändra" class="btn btn-info" data-toggle="modal" data-target="@("#editUser-" + item.Id)" data-url="@Url.Action($"Edit/{item.Id}")"><i class="fa fa-edit"></i></button>
+                        <button id="btn-details" title="Detaljer" class="btn btn-info" data-toggle="modal" data-target="@("#detailUser-" + item.Id)" data-url="@Url.Action($"Details/{item.Id}")"><i class="fa fa-info"></i></button>
+                        @await Html.PartialAsync("_PartialDetailView", item)
+                    <button id="btn-edit" title="Ändra" class="btn btn-info" data-toggle="modal" data-target="@("#editUser-" + item.Id)" data-url="@Url.Action($"Edit/{item.Id}")"><i class="fa fa-edit"></i></button>
                         @await Html.PartialAsync("_PartialEditView", item)
                         <button id="btn-delete" title="Radera" class="btn btn-info" data-toggle="modal" data-target="@("#deleteUser-" + item.Id)" data-url="@Url.Action($"Delete/{item.Id}")"><i class="fa fa-trash"></i></button>
                         @await Html.PartialAsync("_PartialDeleteView", item)

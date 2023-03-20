@@ -46,7 +46,7 @@ namespace Frisk_2._0.Controllers
             var responseContent = await response.Content.ReadAsStringAsync();
             user = JsonConvert.DeserializeObject<SignUp>(responseContent);
 
-            return View(user);
+            return PartialView("_PartialDetailView", user);
         }
 
         // GET: AdminController/Create

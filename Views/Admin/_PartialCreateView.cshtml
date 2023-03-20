@@ -10,14 +10,16 @@
             </div>
             <div class="modal-body">
                 <form asp-action="Create" method="post">
-                   
-                    <select name="UserType">
-
-                        <option value="user">Privatperson</option>
-                        <option value="sponsor">Sponsor</option>
-                        <option value="admin">Admin</option>
-                    </select>
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="UserType" class="control-label">Användartyp</label>
+                        <select asp-for="UserType" class="form-control" placeholder="Ange användartyp">
+
+                            <option value="user">Privatperson</option>
+                            <option value="sponsor">Sponsor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label asp-for="FirstName" class="control-label">Förnamn</label>
                         <input asp-for="FirstName" class="form-control" placeholder="Ange förnamn" />
