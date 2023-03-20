@@ -1,0 +1,24 @@
+﻿@model Frisk_2._0.Models.SignUp
+<div class="modal fade" id="deleteUser-@Model.Id" aria-labelledby="deleteUserLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="deleteUserLabel">Radera användare</h3>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <p>Vill du verkligen radera denna användare?</p>
+                    <div class="modal-footer">
+                        <button id="btn-back" type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                        <button id="btn-save" type="submit" class="btn btn-primary">Radera</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

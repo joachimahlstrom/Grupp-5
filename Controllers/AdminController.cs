@@ -132,7 +132,7 @@ namespace Frisk_2._0.Controllers
                     user = JsonConvert.DeserializeObject<SignUp>(respons);
                 }
             }
-            return View(user);
+            return PartialView("_PartialDeleteView",user);
         }
 
         // POST: AdminController/Delete/5

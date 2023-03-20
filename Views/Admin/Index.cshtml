@@ -49,8 +49,9 @@
                     <button id="btn-details" title="Detaljer" onclick="window.location='@Url.Action("Details", "Admin", new { id= item.Id })'"><i class="fa fa-info"></i></button>
                         <button id="btn-edit" title="Ändra" class="btn btn-info" data-toggle="modal" data-target="@("#editUser-" + item.Id)" data-url="@Url.Action($"Edit/{item.Id}")"><i class="fa fa-edit"></i></button>
                         @await Html.PartialAsync("_PartialEditView", item)
-                    <button id="btn-delete" title="Radera" onclick="window.location='@Url.Action("Delete", "Admin", new { id= item.Id })'"><i class="fa fa-trash"></i></button>
-                </td>
+                        <button id="btn-delete" title="Radera" class="btn btn-info" data-toggle="modal" data-target="@("#deleteUser-" + item.Id)" data-url="@Url.Action($"Delete/{item.Id}")"><i class="fa fa-trash"></i></button>
+                        @await Html.PartialAsync("_PartialDeleteView", item)
+                    </td>
         </tr>
 }
     </tbody>
