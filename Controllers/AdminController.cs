@@ -75,7 +75,7 @@ namespace Frisk_2._0.Controllers
             content = new StringContent(JsonConvert.SerializeObject(idFromDb), Encoding.UTF8, "application/json");
 
             //Skickar en Post-request till API för profilgruppen endast av id-värdet 
-            response = await httpClient.PostAsync("https://informatik1.ei.hv.se/Profiluserinfos/api/UserInfos/Register/1213" + idFromDb, content);
+            response = await httpClient.PostAsync("https://informatik1.ei.hv.se/Profiluserinfos/api/UserInfos/Register/" + idFromDb, content);
 
             //returnerar till indexsidan 
             return RedirectToAction(nameof(Index));
