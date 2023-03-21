@@ -46,6 +46,17 @@ namespace Frisk_2._0.Controllers
             var responseContent = await response.Content.ReadAsStringAsync();
             user = JsonConvert.DeserializeObject<SignUp>(responseContent);
 
+            // anropar read view av detaljer för profilgrupps info för varje enskilt id
+
+            using ( response = await _httpClient.GetAsync("https://informatik1.ei.hv.se/Profiluserinfos/api/UserInfos/" + id))
+            {
+                // definierar att det är strängdata
+                 responseContent = await response.Content.ReadAsStringAsync();
+
+                // konverterar listan med hjälp av json
+                user = JsonConvert.DeserializeObject<SignUp>(responseContent);
+            }
+
             return PartialView("_PartialDetailView", user);
         }
 

@@ -29,6 +29,12 @@ public class SignUp
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Lösenorden matchar inte.")]
         public string ConfirmPassword { get; set; }
+
+
+        //anrop för profilanändargruppens information
+        public string image { get;}
+        public string phoneNumber { get; }
+
     }
 }
 
