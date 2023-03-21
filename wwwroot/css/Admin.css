@@ -33,65 +33,12 @@ header {
 
 .navbar {
     background-color: var(--Yellow);
-    height: 75px;
-    width: 100%;
-    align-self: flex-start;
-    margin: 0px;
-    font-family: var(--Font);
-    font-size: 20px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 800;
+
 }
 
-.navbar-logo img {
-    height: 70px;
-    width: auto;
-}
 
-.navbar-brand {
-    color: var(--White);
-    font-size: 30px;
-    letter-spacing: 1vw;
-    margin-left: 7vw;
-    line-height: 4.5rem;
-    text-decoration: none
-}
 
-.nav-list {
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    gap: 1vw;
-}
 
-.nav-item:nth-of-type(1) {
-    flex-grow: 1;
-}
-
-.nav-item:nth-of-type(4) {
-    flex-grow: 0.8;
-}
-
-.nav-item:nth-of-type(6) {
-    flex-grow: 0.3;
-}
-
-.nav-link {
-    color: var(--DarkGreen);
-    text-decoration: none;
-    transition: 0.4s;
-    line-height: 4.5rem;
-}
-
-    .nav-link:hover {
-        background-color: var(--DarkGreen);
-        color: var(--White);
-        padding: 7px 15px;
-        border-radius: 5px;
-    }
 
 /*Index vyn*/
 
@@ -221,48 +168,12 @@ input {
     font-size: 16px;
 }
 
-/*Footer */
-
-    .footer {
-        background-color: var(--DarkGreen);
-        height: 200px;
-        justify-content: center;
-    }
-
-
-
-.footer-list {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    gap: 3vw;
-    bottom: 0;
-    height: 100%;
-}
-
-.column {
-    width: 25%;
-    color: white;
-}
-
-p {
-    font-size: 12px;
-}
-
-
 .body-cont {
     height: 900px;
     width: 100%;
 }
 
-.contact-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    gap: 3vw;
-}
+
 
 /*Om skärmen är mindre eller = 800px ska följande visas:*/
 @media (max-width: 800px) {
