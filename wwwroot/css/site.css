@@ -18,7 +18,10 @@ body {
 
 header {
     position: sticky;
-    top: 0;    
+    top: 0;
+    /*lägger navbar framför annat innehåll*/
+    z-index: 100;
+    height: auto;
 }
 footer h4 {
     margin: 26.6px;
