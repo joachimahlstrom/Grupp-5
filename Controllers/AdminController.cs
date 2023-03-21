@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Web;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Frisk_2._0.Controllers
 {
@@ -156,6 +158,15 @@ namespace Frisk_2._0.Controllers
             HttpResponseMessage response = await httpClient.DeleteAsync(url);
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync(
+            CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Index", "Login");
+        }
     }
-    
 }
+
+    
+

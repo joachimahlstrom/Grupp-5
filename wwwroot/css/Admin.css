@@ -28,13 +28,26 @@ header {
     align-content: center;
     justify-content: center;
     width: auto;
-    align-self: flex-start
+    align-self: flex-start;
 }
 
+.navbar-logo img {
+    height: 60px;
+    width: auto;
+    margin-top: 2.5px;
+    margin-left: 15px;
+
+}
 .navbar {
     background-color: var(--Yellow);
 
 }
+
+.nav-link:hover{
+    background-color: var(--DarkGreen);
+    color: var(--White);
+}
+
 
 .login-list a {
     color: var(--White);
