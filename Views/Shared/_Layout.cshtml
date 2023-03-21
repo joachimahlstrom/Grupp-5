@@ -23,9 +23,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://informatik3.ei.hv.se/frisk">Sök Event</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://informatik1.ei.hv.se/profilwebb/home">Logga in</a>
-                </li>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://informatik1.ei.hv.se/profilwebb/home">Logga in</a>
+                    </li>
+                } else{
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Login" asp-action="LogOut">Logga ut</a>
+                    </li>
+                }
                 <li class="nav-item">
                     <a class="nav-link" href="https://informatik5.ei.hv.se/frisk2.0/SignUp">Bli medlem</a>
                 </li>
