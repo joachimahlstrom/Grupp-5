@@ -39,6 +39,8 @@ footer h4 {
 .navbar-logo img {
     height: 70px;
     width: auto;
+    margin-top:2.5px;
+    margin-left: 15px;
 }
 .navbar-brand {
     color: var(--White);
