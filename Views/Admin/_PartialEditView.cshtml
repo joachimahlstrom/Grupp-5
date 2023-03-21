@@ -10,22 +10,22 @@
             </div>
             <div class="modal-body">
                 <form asp-action="Edit" method="post">
-                    <dl class="row">
-                        <dt class="col-sm-3">
-                            <label asp-for="Id" class="control-label">ID</label>
-                            @Html.DisplayFor(model => model.Id)
-                        </dt>
-                    </dl>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                    <label asp-for="UserType" class="control-label">Användartyp</label>
-                    <select asp-for="UserType" class="form-control" placeholder="@Html.DisplayFor(model => model.UserType)">
+                        <label asp-for="Id" class="control-label">Id</label>
+                        <input asp-for="Id" class="form-control" />
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UserType" class="control-label">Användartyp</label>
+                        <select asp-for="UserType" class="form-control" placeholder="@Html.DisplayFor(model => model.UserType)">
 
-                        <option value="user">Privatperson</option>
-                        <option value="sponsor">Sponsor</option>
-                        <option value="admin">Admin</option>
+                            <option value="user">Privatperson</option>
+                            <option value="sponsor">Sponsor</option>
+                            <option value="admin">Admin</option>
                         </select>
                     </div>
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                     <div class="form-group">
                         <label asp-for="FirstName" class="control-label">Förnamn</label>
                         <input asp-for="FirstName" class="form-control" placeholder="Ange förnamn" />
@@ -43,12 +43,12 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Password" class="control-label">Lösenord</label>
-                        <input asp-for="Password" class="form-control" placeholder="Ange lösenord" />
+                        <input asp-for="Password" class="form-control" value="@Html.DisplayFor(model => model.Password)" placeholder="Ange lösenord" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="ConfirmPassword" class="control-label">Upprepa lösenord</label>
-                        <input asp-for="ConfirmPassword" input type="password" class="form-control" placeholder="Upprepa ditt lösenord" />
+                        <input asp-for="ConfirmPassword" input type="password" value="@Html.DisplayFor(model => model.Password)" class="form-control" placeholder="Upprepa ditt lösenord" />
                         <span asp-validation-for="ConfirmPassword"></span>
                     </div>
                     <div class="modal-footer">
