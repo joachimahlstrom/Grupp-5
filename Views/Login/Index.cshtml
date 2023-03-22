@@ -20,6 +20,9 @@
         span {
             font-size: small;
         }
+        .text-danger {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -33,7 +36,7 @@
             <div class="form-group">
                 <label asp-for="Email"></label>
                 <input asp-for="Email" class="form-control" placeholder="Ange din email" required />
-                <span asp-validation-for="Email"></span>
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="form-group">

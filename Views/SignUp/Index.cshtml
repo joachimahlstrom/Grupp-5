@@ -16,6 +16,11 @@
     <style>
         span {
             font-size: small;
+            
+        }
+
+        .text-danger {
+            color: red;
         }
     </style>
     </head>
@@ -29,8 +34,8 @@
             <h3>Bli medlem</h3>
 
             <div class="form-group">
-                <input asp-for="FirstName" class="form-control" placeholder="Ange ditt förnamn" />
-                <span asp-validation-for="FirstName"></span>
+                <input asp-for="FirstName" class="form-control"  placeholder="Ange ditt förnamn" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input asp-for="LastName" class="form-control" placeholder="Ange ditt efternamn" />
@@ -38,7 +43,7 @@
             </div>
             <div class="form-group">
                 <input asp-for="Email" class="form-control" placeholder="Ange din email" />
-                <span asp-validation-for="Email"></span>
+                <span asp-validation-for="Email" class="text-danger"></span>
                 
                 <select name="UserType">
                     
@@ -48,11 +53,11 @@
             </div>
             <div class="form-group">
                 <input asp-for="Password" input type="password" class="form-control" placeholder="Ange ditt lösenord" />
-                <span asp-validation-for="Password"></span>
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input asp-for="ConfirmPassword" input type="password" class="form-control" placeholder="Upprepa ditt lösenord" />
-                <span asp-validation-for="ConfirmPassword"></span>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             
 
