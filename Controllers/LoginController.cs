@@ -81,7 +81,7 @@ namespace Frisk_2._0.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "LoggedIn", userData);
+                        return RedirectToAction("Index", "Home", userData);
                     }
                     
                 }
