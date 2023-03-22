@@ -8,11 +8,14 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using NLog;
 
 namespace Frisk_2._0.Controllers
 {
     public class LoginController : Controller
     {
+        private static Logger logger = LogManager.GetLogger("myAppLoggerRules");
+
         private readonly HttpClient _httpClient;
 
         public LoginController()
@@ -24,6 +27,7 @@ namespace Frisk_2._0.Controllers
 
         public IActionResult Index()
         {
+            logger.Info("Login page requested");
             return View();
         }
 
@@ -38,6 +42,8 @@ namespace Frisk_2._0.Controllers
                 var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
                 logIn.Lösenord = hash;
             }
+
+            logger.Info($"User attempted to login with email: {logIn.Email}");
 
             // Skapa en GET-begäran med användardata
             var response = await _httpClient.GetAsync($"Users?email={logIn.Email}&password={logIn.Lösenord}");
@@ -74,6 +80,8 @@ namespace Frisk_2._0.Controllers
                     // Skapa en autentiseringscookie
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
 
+                    logger.Info($"User with email: {logIn.Email} logged in successfully");
+
                     // Skicka användarens uppgifter till LoggedIn-vyn samt kolla om användaren är admin
                     if (userData.UserType == "admin")
                     {
@@ -81,14 +89,16 @@ namespace Frisk_2._0.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home", userData);
+                        return RedirectToAction("Index", "LoggedIn", userData);
                     }
-                    
+
                 }
+
             }
 
             // Om användarnamn eller lösenord är felaktiga, skicka tillbaka till login-sidan med ett felmeddelande
             TempData["Message"] = "Felaktigt användarnamn eller lösenord";
+            logger.Info($"User with email: {logIn.Email} Failed login");
             return RedirectToAction("Index");
         }
         //Funktion som loggar ut användaren och omdirigerar tillbaka till inloggningssidan.
