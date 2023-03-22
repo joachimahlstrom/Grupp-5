@@ -28,6 +28,8 @@ public class SignUp
         public string Password { get; set; }
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Lösenorden matchar inte.")]
+
+        // denna variabel sparas inte i databasen
         public string ConfirmPassword { get; set; }
 
 
