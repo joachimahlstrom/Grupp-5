@@ -59,5 +59,10 @@
     </tbody>
 </table>
 </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
 
 @await Html.PartialAsync("_PartialCreateView", new SignUp())
