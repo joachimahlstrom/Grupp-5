@@ -5,19 +5,14 @@
 }
 <link href="~/css/landingpage.css" rel="stylesheet" />
 
-    @if (Model != null)
-    {
-        <h1>Välkommen, @Model.FirstName!</h1>
-        
-        
-    }
-    else
-    {
-        
-    }
+    
     <hero class="hero-image">
     
     <div class="hero-container">
+        @if (Model != null)
+    {
+        <p class="heroWelcome">Välkommen, @Model.FirstName!</p>
+    }
                 <p class="heroHeading">Hitta event nära dig!</p>
     
         <div class="input-cont">
