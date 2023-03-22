@@ -1,5 +1,4 @@
-﻿
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap%27');
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap%27');
 
 
 :root {
@@ -36,14 +35,13 @@ header {
     width: auto;
     margin-top: 2.5px;
     margin-left: 15px;
-
 }
+
 .navbar {
     background-color: var(--Yellow);
-
 }
 
-.nav-link:hover{
+.nav-link:hover {
     background-color: var(--DarkGreen);
     color: var(--White);
 }
@@ -72,16 +70,14 @@ header {
     border-collapse: collapse;
     border-radius: 30px;
     width: auto;
-
-    
 }
 
-    #table td{
+    #table td {
         padding: 12px;
     }
 
 tr:nth-child(even) {
-    background-color:#f2f2f2;
+    background-color: #f2f2f2;
 }
 
 #table-body tr:hover {
@@ -99,19 +95,19 @@ tr:nth-child(even) {
 /*Vy-design (ej index)*/
 .table-edit {
     padding: 20px;
-    border-style:solid;
-    border-color:lightslategray;
+    border-style: solid;
+    border-color: lightslategray;
     border-radius: 10px;
     background-color: lightgray;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     font-size: 24px;
-    margin-bottom:25px;
+    margin-bottom: 25px;
     margin-top: 25px;
 }
 
 input {
-    height:20px;
+    height: 20px;
 }
 
 /* knappar */
@@ -126,7 +122,6 @@ input {
     font-weight: bold;
     cursor: pointer;
     color: white;
-    
 }
 
 #btn-delete {
@@ -138,7 +133,6 @@ input {
     color: white;
     padding: 12px 16px;
     font-size: 16px;
-
 }
 
 #btn-edit {
@@ -190,16 +184,43 @@ input {
     width: 100%;
 }
 
-.footer .column{
-    width: 27vw;
+/*.footer .column{
+    width: 15vw;
+    justify-content: center;
+    align-items: center;
+    
+}*/
+
+
+
+/*.footer-list {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}*/
+
+.footer .column {
+    width: 15vw;
 }
+
+.footer-list h4 {
+    display: flex;
+    justify-content: left;
+}
+
+.footer-list p {
+    display: flex;
+    justify-content: left;
+}
+
+
+
 
 
 
 
 /*Om skärmen är mindre eller = 800px ska följande visas:*/
 @media (max-width: 800px) {
-    
 }
 
 /*TEST  MODAL PopUp*/

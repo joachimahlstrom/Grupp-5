@@ -15,7 +15,7 @@
     @*Bootstrap*@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
+
 </head>
 <body>
     <header>
@@ -23,10 +23,7 @@
             <ul class="nav-list">
                 <li class="nav-item">
                     <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://informatik5.ei.hv.se/frisk2.0/Pictures/logo.png" /></a>
-               </li>
-               <li class="nav-item">
-                    <a class="nav-link" asp-controller="Login" asp-action="LogOut">Logga ut</a>
-               </li>
+                </li>
             </ul>
         </nav>
     </header>
@@ -39,17 +36,32 @@
             <div class="column">
                 <h4>Sidan senast besökt</h4>
                 <p>@DateTime.Now</p>
-                </div>
+            </div>
+
+            <div class="column">
+                <h4>Kontaktinformation</h4>
+                <ul class="login-list">
+
+                    <li><p>Adress: Friskvägen 1 123 45 Friskstad</p></li>
+                    <li><p>Mail: Frisk@frisk.se</p></li>
+                    <li><p>Telefon: 031-123 45</p></li>
+                </ul>
+                </ul>
+
+            </div>
+
             <div class="column">
                 <h4>Tjänster</h4>
                 <ul class="login-list">
 
                     <li><p><a href="https://informatik3.ei.hv.se/frisk/Monitoring">Övervakning</a></p></li>
-                    
+                    <li><p><a asp-controller="Login" asp-action="LogOut">Logga ut</a></p></li>
+
+
                 </ul>
-                
-                </div>
-            
+
+            </div>
+
 
         </div>
     </footer>
