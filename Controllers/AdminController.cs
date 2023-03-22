@@ -126,6 +126,15 @@ namespace Frisk_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(SignUp user)
         {
+
+            // hashning av lösenord
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(user.Password));
+                var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+                user.Password = hash;
+            }
+            //anrop
             string url = @"http://193.10.202.75/FriskAPI/Users/" + user.Id;
             HttpClient httpClient = new HttpClient();
             StringContent content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
