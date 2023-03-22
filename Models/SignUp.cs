@@ -31,10 +31,6 @@ public class SignUp
         public string ConfirmPassword { get; set; }
 
 
-        //anrop för profilanändargruppens information
-        public string image { get;}
-        public string phoneNumber { get; }
-
     }
 }
 
