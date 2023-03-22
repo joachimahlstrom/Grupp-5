@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label asp-for="ConfirmPassword" class="control-label">Upprepa lösenord</label>
                         <input asp-for="ConfirmPassword" input type="password" class="form-control" placeholder="Upprepa ditt lösenord" />
-                        <span asp-validation-for="ConfirmPassword"></span>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger" ></span>
                     </div>
                     <div class="modal-footer">
                         <button id="btn-back" type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
